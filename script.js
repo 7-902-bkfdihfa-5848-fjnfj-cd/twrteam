@@ -9,10 +9,10 @@ ScrollReveal().reveal('#hero h1, .about .content p, #hero h2,  #about .content h
 ScrollReveal().reveal('.about .icon-boxes .icon-box,  .services .icon-box, .social-media a', { origin: 'bottom' }); 
 
 
-
+/*
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-}) 
+}) */
 
 
 
