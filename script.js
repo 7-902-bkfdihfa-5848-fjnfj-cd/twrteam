@@ -5,8 +5,10 @@ ScrollReveal({
     delay: 200
 })
 
-ScrollReveal().reveal('#hero h1, .about .content p, #hero h2,  #about .content h3, .section-title h2, #hero a', { origin: 'top' });
-ScrollReveal().reveal('.about .icon-boxes .icon-box,  .services .icon-box, .social-media a', { origin: 'bottom' }); 
+ScrollReveal().reveal('#hero h1, .about .content p, #hero h2,  #about .content h3, .section-title h2, #hero a, #keys, .contact h2, .image-section', { origin: 'top' });
+ScrollReveal().reveal('.about .icon-boxes .icon-box,  .services .icon-box, .social-media a, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.icon-box2', { origin: 'left' });
+ScrollReveal().reveal('.icon-box3', { origin: 'right' });
 
 
 document.addEventListener('contextmenu', function(e) {
