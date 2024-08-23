@@ -1,3 +1,16 @@
+ScrollReveal({
+    reset: false,
+    distance: '80px',
+    duration: 2000,
+    delay: 200
+})
+
+// .img-slider
+ScrollReveal().reveal('#header .logo h3' , { origin: 'top' });
+ScrollReveal().reveal('.navigation', { origin: 'bottom' }); 
+ScrollReveal().reveal('.img-box', { origin: 'left' }); 
+ScrollReveal().reveal('.info-box', { origin: 'right' }); 
+
 const imgSlider = document.querySelector('.img-slider');
 const items = document.querySelectorAll('.item');
 const imgItems = document.querySelectorAll('.img-item');
@@ -48,3 +61,7 @@ prevBtn.addEventListener('click', () => {
 });
 
 imgItems[0].classList.add('active');
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+}) 
