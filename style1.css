@@ -1783,7 +1783,7 @@ form button:hover {
   transform: translateY(-2rem); 
   line-height: 45px; 
   
-  padding-left: 33px; 
+  padding-left: 1px; 
   text-align: left; 
   text-decoration: none;
 }
@@ -1802,28 +1802,44 @@ form button:hover {
 
 #keys {
   display: flex;
+  flex-direction: column; /* Stack elements vertically */
   justify-content: center; 
   align-items: center; 
   min-height: 35vh; 
   background: linear-gradient(to right, var(--gradient1left), var(--gradient2right));
   padding: 15px;
+  position: relative; /* Ensure child elements can be positioned relative to this container */
 }
 
-#keys  h2 {
+#keys h2 {
   font-weight: 700;
-  margin-top: 50px;
-  position: absolute;
-  right: 807px;
-  top: 1563px;
+  margin-top: 5vh; /* Relative to viewport height for responsiveness */
+  margin-bottom: -35px;
+  position: relative;
+  text-align: center; /* Centers the text horizontally */
+  width: 100%; /* Ensures the element takes full width */
 }
 
 #keys p {
-  position: absolute;
-  right: 410px;
-  top: 1663px;
+  margin-top: 5vh; /* Adds some vertical spacing */
+  text-align: center; /* Centers the text horizontally */
+  width: 100%; /* Ensures the element takes full width */
 }
 
 #keys a {
-  margin-left: -10px;
-  margin-top: 150px;
+  margin-top: 5vh; /* Adds vertical space between p and a */
+  text-align: center;
+  display: block; /* Make the anchor a block-level element */
+  margin-left: 430px; /* Reset the left margin to center align */
+  width: 10%; /* Allows the link to take up only as much space as needed */
+}
+
+@media (max-width: 994px) {
+  #keys a {
+    margin-top: 5vh; /* Adds vertical space between p and a */
+    text-align: center;
+    display: block; /* Make the anchor a block-level element */
+    margin-left: 0; /* Reset the left margin to center align */
+    width: auto; /* Allows the link to take up only as much space as needed */
+  }
 }
