@@ -51,7 +51,7 @@
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Features</a></li>
           <li><a class="nav-link scrollto" href="#projects">Projects</a></li>
-          <li><a class="nav-link scrollto" href="https://discord.com/invite/WHpy6C39X4">Support (soon)</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="https://discord.com/invite/WHpy6C39X4">Discord</a></li>
           
         </ul>
@@ -120,6 +120,14 @@
       </div>
     </section>
 
+    <section id="keys" class="keys">
+      <div class="keys">
+        <h2>Cloud Hub Keyless</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cum quia, dignissimos recusandae eos nisi veritatis quos ex libero sapiente.</p>
+        <a href="buykey.html" class="btn2">Buy</a>
+      </div>
+    </section>
+
 
     <section id="services" class="services">
       <div class="container">
@@ -164,6 +172,81 @@
 
         </div>
 
+<!-- 3d -->
+
+<div class="image-section">
+  <div class="image-container">
+      <img src="banner2..png" alt="3D Effect Image" id="image">
+  </div>
+</div>
+
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  .image-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 50px 20px;
+      position: relative;
+  }
+
+  .image-container {
+      width: 100%;
+      max-width: 600px; 
+      perspective: 1000px; 
+  }
+
+  #image {
+      width: 100%;
+      height: auto;
+      border-radius: 20px; 
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); 
+      transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+      transform-origin: center center;
+      max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+      .image-section {
+          padding: 10px;
+      }
+
+      #image {
+          border-radius: 15px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      }
+  }
+</style>
+
+<script>
+  const image = document.getElementById('image');
+
+  document.querySelector('.image-container').addEventListener('mousemove', function(event) {
+      const { offsetX, offsetY, target } = event;
+      const { clientWidth, clientHeight } = target;
+
+      const rotateX = ((offsetY / clientHeight) - 0.5) * 30; 
+      const rotateY = ((offsetX / clientWidth) - 0.5) * -30;
+
+      image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      image.style.boxShadow = `${-rotateY}px ${rotateX}px 35px rgba(0, 0, 0, 0.5)`; 
+  });
+
+  document.querySelector('.image-container').addEventListener('mouseleave', function() {
+      image.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      image.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.5)';
+  });
+</script>
+
+<!-- 3d end -->
+
       </div>
 
       <section id="projects" class="projects">
@@ -181,7 +264,7 @@
                 <h4 class="title">Galaxy Swapper V2 Plugins</h4>
                 <p class="description">A Discord based community of more than 4500 Active Members requesting plugins for Galaxy Swapper v2, With over 900 tickets opened, and 300 community based plugins produced.
                   We covered 5 continents with our services and over 1200 Working plugins were made in a 3 month timespan.</p>
-                <a href="https://galaxyplugins.vercel.app" class="btn">Website (W.I.P)</a>
+                <a href="https://galaxyplugins.vercel.app" class="btn">Website (unf.)</a>
               </div>
             </div>
 
@@ -200,11 +283,50 @@
   
         </div>
 
+
+        <!-- contact form -->
+
+        <section id="contact" class="contact">
+          <h2>Contact Us</h2>
+          <form action="#">
+            
+            <div class="input-box">
+
+              <div class="input-field field">
+                <input type="text" placeholder="Discord Username" id="name" class="item" autocomplete="off">
+                <div class="error-txt">Discord Username can't be blank</div>
+              </div>
+
+              <div class="input-field field">
+                <input type="text" placeholder="Subject" id="subject" class="item" autocomplete="off">
+                <div class="error-txt">Subject can't be blank</div>
+              </div>
+            </div>
+
+            <div class="input-box">
+
+              <div class="input-field2 field">
+                <input type="text" placeholder="Email Address" id="email" class="item" autocomplete="off">
+                <div class="error-txt email">Email Address can't be blank</div>
+              </div>
+            </div>
+
+            <div class="textarea-field field">
+              <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message/Issue" class="item" autocomplete="off"></textarea>
+              <div class="error-txt">Message/Issue can't be blank</div>
+            </div>
+
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+
    
   </main>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-  
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="script.js"></script>
 
   <a href="#hero" class="back-to-top d-flex align-items-center justify-content-center"><i class='bx bx-up-arrow-alt'></i></a>
