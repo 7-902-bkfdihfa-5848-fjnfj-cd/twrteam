@@ -221,6 +221,10 @@ body::before {
     background: var(--background-color);
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .unsupported-screen {
     display: none; 
     position: fixed;
@@ -237,6 +241,7 @@ body::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* Prevent overflow */
 }
 
 .unsupported-screen h1 {
@@ -274,14 +279,54 @@ body::before {
     }
 }
 
-/* Further responsiveness for very small devices */
-@media (max-width: 600px) {
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
     .unsupported-screen h1 {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        font-size: 24px;
+        margin-bottom: 10px; /* Reduce margin for smaller screens */
     }
 
     .unsupported-screen .btn {
-        padding: 10px 20px; /* Adjust button padding for smaller screens */
-        font-size: 1rem; /* Adjust font size for smaller screens */
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* For tablets in portrait mode */
+@media (max-width: 768px) {
+    .unsupported-screen h1 {
+        font-size: 30px;
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    .unsupported-screen .btn {
+        padding: 12px 25px;
+        font-size: 17px;
+    }
+}
+
+/* For small desktops or larger tablets in landscape mode */
+@media (max-width: 1024px) {
+    .unsupported-screen h1 {
+        font-size: 32px;
+        margin-bottom: 20px; /* Adjust margin */
+    }
+
+    .unsupported-screen .btn {
+        padding: 14px 28px;
+        font-size: 18px;
+    }
+}
+
+/* For very large screens (optional) */
+@media (min-width: 1600px) {
+    .unsupported-screen h1 {
+        font-size: 40px;
+        margin-bottom: 25px; /* Adjust margin */
+    }
+
+    .unsupported-screen .btn {
+        padding: 18px 35px;
+        font-size: 20px;
     }
 }
