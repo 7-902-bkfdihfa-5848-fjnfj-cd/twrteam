@@ -26,6 +26,32 @@ body {
     overflow: hidden;
 }
 
+#header {
+    position: absolute;
+    top: 14px;
+    left: 143px;
+    width: 100%;
+    background: transparent;
+    z-index: 1000;
+}
+#header .logo h3 {
+    font-size:27px;         
+    margin: 0;               
+    line-height: 1;        
+    font-weight: 700;        
+    letter-spacing: 1px;     
+    text-decoration: none; 
+}
+
+#header .logo h3 a {
+    color: var(--background-color);     
+    text-shadow: 0 0 20px #c6a7ff;   
+    text-decoration: none;  
+}
+
+
+
+
 body::before {
     content: '';
     position: absolute;
