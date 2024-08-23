@@ -221,13 +221,20 @@ body::before {
     background: var(--background-color);
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide scrollbars */
+    height: 100%; /* Ensure full height */
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 .unsupported-screen {
     display: none; 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -283,12 +290,13 @@ body::before {
 @media (max-width: 480px) {
     .unsupported-screen h1 {
         font-size: 24px;
-        margin-bottom: 10px; /* Reduce margin for smaller screens */
+        margin: 0; /* Remove margin if you want it to stick to the top */
     }
 
     .unsupported-screen .btn {
         padding: 10px 20px;
         font-size: 16px;
+        margin-top: 10px; /* Add space between the button and the heading */
     }
 }
 
@@ -296,12 +304,13 @@ body::before {
 @media (max-width: 768px) {
     .unsupported-screen h1 {
         font-size: 30px;
-        margin-bottom: 15px; /* Adjust margin */
+        margin: 0; /* Remove margin if you want it to stick to the top */
     }
 
     .unsupported-screen .btn {
         padding: 12px 25px;
         font-size: 17px;
+        margin-top: 15px; /* Add space between the button and the heading */
     }
 }
 
@@ -309,12 +318,13 @@ body::before {
 @media (max-width: 1024px) {
     .unsupported-screen h1 {
         font-size: 32px;
-        margin-bottom: 20px; /* Adjust margin */
+        margin: 0; /* Remove margin if you want it to stick to the top */
     }
 
     .unsupported-screen .btn {
         padding: 14px 28px;
         font-size: 18px;
+        margin-top: 20px; /* Add space between the button and the heading */
     }
 }
 
@@ -322,11 +332,12 @@ body::before {
 @media (min-width: 1600px) {
     .unsupported-screen h1 {
         font-size: 40px;
-        margin-bottom: 25px; /* Adjust margin */
+        margin: 0; /* Remove margin if you want it to stick to the top */
     }
 
     .unsupported-screen .btn {
         padding: 18px 35px;
         font-size: 20px;
+        margin-top: 25px; /* Add space between the button and the heading */
     }
 }
