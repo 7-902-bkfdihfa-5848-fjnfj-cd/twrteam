@@ -321,7 +321,7 @@ body {
     bottom: 15px;
     left: 15px;
     padding: 10px 0;
-    background-color: #fff;
+    background-color: var(--text-color);
     overflow-y: auto;
     transition: 0.3s;
   }
@@ -330,7 +330,7 @@ body {
   .navbar-mobile a:focus {
     padding: 10px 20px;
     font-size: 15px;
-    color: #01070d;
+    color: var(--white-color);
   }
   
   .navbar-mobile a:hover,
